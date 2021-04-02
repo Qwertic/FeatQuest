@@ -1,0 +1,255 @@
+require:
+  - 'rubocop-performance'
+  - 'rubocop-rails'
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'test/**/*'
+    - 'Gemfile*'
+    - 'Rakefile'
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/NumericLiterals:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'app/services/bigquery_service.rb'
+    - 'app/services/analytics_service.rb'
+    - 'app/helpers/active_admin/views_helper.rb'
+    - 'app/services/slack_service.rb'
+Metrics/ClassLength:
+  Exclude:
+    - 'app/controllers/api/v1/subscriptions_controller.rb'
+    - 'app/controllers/api/v1/conversations_controller.rb'
+    - 'app/controllers/api/v1/settings_controller.rb'
+    - 'app/controllers/api/v1/admin_controller.rb'
+    - 'app/jobs/whatsapp_send_job.rb'
+    - 'app/models/conversation.rb'
+    - 'app/models/user.rb'
+    - 'app/models/account.rb'
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Layout/LineLength:
+  Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Rails:
+  Enabled: true
+
+Rails/UnknownEnv:
+  Enabled: false
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/ReflectionClassName:
+  Enabled: false
+
+Rails/IndexWith:
+  Enabled: false
+
+Rails/OutputSafety:
+  Exclude:
+    - 'app/helpers/application_helper.rb'
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/ApplicationController:
+  Exclude:
+    - 'app/controllers/static_controller.rb'
+
+# New cops (to be enabled progressively)
+Metrics/AbcSize:
+  Exclude:
+    - 'app/models/user.rb'
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Layout/BeginEndAlignment: # (new in 0.91)
+  Enabled: false
+
+Lint/BinaryOperatorWithIdenticalOperands: # (new in 0.89)
+  Enabled: false
+
+Lint/ConstantDefinitionInBlock: # (new in 0.91)
+  Enabled: false
+
+Lint/DuplicateElsifCondition: # (new in 0.88)
+  Enabled: false
+
+Lint/DuplicateRequire: # (new in 0.90)
+  Enabled: false
+
+Lint/DuplicateRescueException: # (new in 0.89)
+  Enabled: false
+
+Lint/EmptyConditionalBody: # (new in 0.89)
+  Enabled: false
+
+Lint/EmptyFile: # (new in 0.90)
+  Enabled: false
+
+Lint/FloatComparison: # (new in 0.89)
+  Enabled: false
+
+Lint/HashCompareByIdentity: # (new in 0.93)
+  Enabled: false
+
+Lint/IdentityComparison: # (new in 0.91)
+  Enabled: false
+
+Lint/MissingSuper: # (new in 0.89)
+  Enabled: false
+
+Lint/MixedRegexpCaptureTypes: # (new in 0.85)
+  Enabled: false
+
+Lint/OutOfRangeRegexpRef: # (new in 0.89)
+  Enabled: false
+
+Lint/RedundantSafeNavigation: # (new in 0.93)
+  Enabled: false
+
+Lint/SelfAssignment: # (new in 0.89)
+  Enabled: false
+
+Lint/TopLevelReturnWithArgument: # (new in 0.89)
+  Enabled: false
+
+Lint/TrailingCommaInAttributeDeclaration: # (new in 0.90)
+  Enabled: false
+
+Lint/UnreachableLoop: # (new in 0.89)
+  Enabled: false
+
+Lint/UselessMethodDefinition: # (new in 0.90)
+  Enabled: false
+
+Lint/UselessTimes: # (new in 0.91)
+  Enabled: false
+
+Style/AccessorGrouping: # (new in 0.87)
+  Enabled: false
+
+Style/BisectedAttrAccessor: # (new in 0.87)
+  Enabled: false
+
+Style/CaseLikeIf: # (new in 0.88)
+  Enabled: false
+
+Style/ClassEqualityComparison: # (new in 0.93)
+  Enabled: false
+
+Style/CombinableLoops: # (new in 0.90)
+  Enabled: false
+
+Style/ExplicitBlockArgument: # (new in 0.89)
+  Enabled: false
+
+Style/GlobalStdStream: # (new in 0.89)
+  Enabled: false
+
+Style/HashAsLastArrayItem: # (new in 0.88)
+  Enabled: false
+
+Style/HashLikeCase: # (new in 0.88)
+  Enabled: false
+
+Style/KeywordParametersOrder: # (new in 0.90)
+  Enabled: false
+
+Style/OptionalBooleanParameter: # (new in 0.89)
+  Enabled: false
+
+Style/RedundantAssignment: # (new in 0.87)
+  Enabled: false
+
+Style/RedundantFetchBlock: # (new in 0.86)
+  Enabled: false
+
+Style/RedundantFileExtensionInRequire: # (new in 0.88)
+  Enabled: false
+
+Style/RedundantRegexpCharacterClass: # (new in 0.85)
+  Enabled: false
+
+Style/RedundantRegexpEscape: # (new in 0.85)
+  Enabled: false
+
+Style/RedundantSelfAssignment: # (new in 0.90)
+  Enabled: false
+
+Style/SingleArgumentDig: # (new in 0.89)
+  Enabled: false
+
+Style/SoleNestedConditional: # (new in 0.89)
+  Enabled: false
+
+Style/StringConcatenation: # (new in 0.89)
+  Enabled: false
